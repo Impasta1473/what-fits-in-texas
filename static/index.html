@@ -1,0 +1,14 @@
+<script>
+    async function checkItem() {
+        const item = document.getElementById("item-input").value;
+        const res = await fetch(`https://yourusername.pythonanywhere.com/estimate?item=${encodeURIComponent(item)}`);
+        const data = await res.json();
+
+        if (data.success) {
+            document.getElementById("result").textContent = `'${item}' fits!`;
+            document.getElementById("remaining-area").textContent = `Remaining: ${data.remaining_area.toFixed(2)} sq miles`;
+        } else {
+            document.getElementById("result").textContent = `'${item}' does NOT fit. Game over!`;
+        }
+    }
+</script>
