@@ -15,7 +15,7 @@
     <script>
     async function checkItem() {
         const item = document.getElementById("item-input").value;
-        const res = await fetch(`https://yourusername.pythonanywhere.com/estimate?item=${encodeURIComponent(item)}`);
+        const res = await fetch(`https://impasta1473.pythonanywhere.com/estimate?item=${encodeURIComponent(item)}`);
         const data = await res.json();
 
         if (data.success) {
