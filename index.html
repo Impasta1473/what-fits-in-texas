@@ -1,4 +1,18 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>What Fits In Texas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>What Fits In Texas</h1>
+    <p id="remaining-area">Remaining: 268,596 sq miles</p>
+    <input type="text" id="item-input" placeholder="Enter an item">
+    <button onclick="checkItem()">Check</button>
+    <p id="result"></p>
+
+    <script>
     async function checkItem() {
         const item = document.getElementById("item-input").value;
         const res = await fetch(`https://yourusername.pythonanywhere.com/estimate?item=${encodeURIComponent(item)}`);
@@ -12,3 +26,5 @@
         }
     }
 </script>
+</body>
+</html>
